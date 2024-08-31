@@ -38,6 +38,7 @@ This method involves editing the Netplan configuration file, which is the defaul
 
 2. **Identify the Network Interface:**
    - Run the following command to list network interfaces:
+     
      ```bash
      ip addr show
      ```
@@ -45,12 +46,14 @@ This method involves editing the Netplan configuration file, which is the defaul
 
 3. **Edit the Netplan Configuration File:**
    - Use a text editor like `nano` to open the Netplan configuration file. The file is usually located in `/etc/netplan/`. The filename may vary but typically looks like `01-netcfg.yaml` or similar.
+     
      ```bash
      sudo nano /etc/netplan/01-netcfg.yaml
      ```
 
 4. **Modify the Configuration for Static IP:**
    - Replace or add the following configuration:
+     
      ```yaml
      network:
        version: 2
@@ -75,12 +78,14 @@ This method involves editing the Netplan configuration file, which is the defaul
 5. **Apply the Configuration:**
    - Save and close the file (`Ctrl + O`, then `Enter`, and `Ctrl + X` to exit).
    - Apply the changes by running:
+     
      ```bash
      sudo netplan apply
      ```
 
 6. **Verify the Static IP Address:**
    - Run the following command to verify that the static IP address is applied:
+     
      ```bash
      ip addr show
      ```
@@ -88,6 +93,7 @@ This method involves editing the Netplan configuration file, which is the defaul
 
 7. **Test the Connection:**
    - Try pinging the gateway or another device on the network to ensure the connection is working:
+     
      ```bash
      ping 192.168.1.1
      ```
